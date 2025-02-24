@@ -1,0 +1,50 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class RestartGSApp {
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(() -> {
+            MainFrame mainFrame = new MainFrame();
+            mainFrame.setVisible(true);
+        });
+    }
+}
+
+class MainFrame extends JFrame {
+    public MainFrame() {
+        setTitle("Restart GS");
+        setSize(400, 400);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLayout(new GridLayout(2, 2));
+
+        JButton serviceButton = new JButton("Servis");
+        JButton inventoryButton = new JButton("Magacin");
+        JButton workOrdersButton = new JButton("Radni Nalozi");
+        JButton expensesButton = new JButton("Troškovi");
+
+        serviceButton.addActionListener(new ScreenListener("Servis"));
+        inventoryButton.addActionListener(new ScreenListener("Magacin"));
+        workOrdersButton.addActionListener(new ScreenListener("Radni Nalozi"));
+        expensesButton.addActionListener(new ScreenListener("Troškovi"));
+
+        add(serviceButton);
+        add(inventoryButton);
+        add(workOrdersButton);
+        add(expensesButton);
+    }
+}
+
+class ScreenListener implements ActionListener {
+    private String screenName;
+
+    public ScreenListener(String screenName) {
+        this.screenName = screenName;
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        JOptionPane.showMessageDialog(null, "Otvaram: " + screenName);
+    }
+}

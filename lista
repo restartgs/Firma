@@ -1,0 +1,23 @@
+/src
+│── Main.java                      # Ulazna tačka aplikacije
+│── ui/
+│   ├── MainFrame.java             # Glavni prozor aplikacije
+│   ├── ServicePanel.java          # Ekran za servisne naloge
+│   ├── InventoryPanel.java        # Ekran za magacin robe
+│   ├── WorkOrdersPanel.java       # Ekran za radne naloge
+│   ├── ToolsPanel.java            # Ekran za evidenciju alata
+│   ├── ExpensesPanel.java         # Ekran za troškove
+│   ├── StatusPanel.java           # Status radova
+│── services/
+│   ├── FirebaseService.java       # Konekcija sa Firebase
+│   ├── PDFService.java            # Generisanje PDF izveštaja
+│   ├── ExcelService.java          # Generisanje Excel izveštaja
+│   ├── EmailService.java          # Slanje e-maila
+│── models/
+│   ├── Service.java               # Model servisa
+│   ├── Inventory.java             # Model magacina
+│   ├── WorkOrder.java             # Model radnih naloga
+│   ├── Tool.java                  # Model alata
+│── utils/
+│   ├── TimeUtils.java             # Prikaz vremena u aplikaciji
+│   ├── Constants.java             # Stilovi, boje, konstante

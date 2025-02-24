@@ -1,0 +1,52 @@
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.layout.GridPane;
+import javafx.stage.Stage;
+
+public class RestartGSApp extends Application {
+    @Override
+    public void start(Stage primaryStage) {
+        primaryStage.setTitle("Restart GS");
+
+        GridPane grid = new GridPane();
+        Button serviceButton = new Button("Servis");
+        Button inventoryButton = new Button("Magacin");
+        Button workOrdersButton = new Button("Radni Nalozi");
+        Button toolsButton = new Button("Alati");
+        
+        serviceButton.setOnAction(e -> openServiceScreen());
+        inventoryButton.setOnAction(e -> openInventoryScreen());
+        workOrdersButton.setOnAction(e -> openWorkOrdersScreen());
+        toolsButton.setOnAction(e -> openToolsScreen());
+
+        grid.add(serviceButton, 0, 0);
+        grid.add(inventoryButton, 1, 0);
+        grid.add(workOrdersButton, 0, 1);
+        grid.add(toolsButton, 1, 1);
+        
+        Scene scene = new Scene(grid, 400, 400);
+        primaryStage.setScene(scene);
+        primaryStage.show();
+    }
+    
+    private void openServiceScreen() {
+        System.out.println("Otvori ekran za servis");
+    }
+    
+    private void openInventoryScreen() {
+        System.out.println("Otvori ekran za magacin");
+    }
+    
+    private void openWorkOrdersScreen() {
+        System.out.println("Otvori ekran za radne naloge");
+    }
+    
+    private void openToolsScreen() {
+        System.out.println("Otvori ekran za alate");
+    }
+    
+    public static void main(String[] args) {
+        launch(args);
+    }
+}
